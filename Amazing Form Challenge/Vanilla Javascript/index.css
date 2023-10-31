@@ -41,8 +41,8 @@ body.signup::after  {
 }
 
 body.signup .container {
-    height: 640px;
-  }
+  height: 640px;
+}
 
 .container {
   position: relative;
@@ -72,6 +72,10 @@ body.signup .container {
     #45f3ff 100%
   );
   animation: animate 2s linear infinite;
+}
+
+body.signup .container::before {
+  filter: hue-rotate(270deg);
 }
 
 @property --a {
@@ -107,6 +111,12 @@ body.signup .container {
   filter: blur(10px);
 }
 
+body.signup .container span::before,
+body.signup .container span::after
+{
+  background-image: url("trees.jpg");
+}
+
 .container span::after {
   content: "";
   position: absolute;
@@ -128,6 +138,18 @@ form {
   width: 100%;
   gap: 15px;
   transition: 0.5s;
+}
+
+form#signupform {
+  left: 100%;
+}
+
+body.signup form#signinform {
+  left: -100%;
+}
+
+body.signup form#signupform {
+  left: 0%;
 }
 
 form h2 {
@@ -153,7 +175,7 @@ form .inputBox a {
   font-size: 0.8em;
 }
 
-form .inputBox a:nth-child(2) {
+form#signinform .inputBox a:nth-child(2) {
   text-decoration: underline;
 }
 
@@ -176,4 +198,18 @@ form .inputBox input[type="submit"] {
   background: #2196f3;
   font-weight: 500;
   cursor: pointer;
+}
+
+form#signupform .inputBox input[type="submit"] {
+  background: green;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+form#signupform .inputBox p {
+  color: #fff;
+}
+
+form#signupform .inputBox a {
+  text-decoration: underline;
 }
