@@ -9,7 +9,116 @@
 
 body {
     display: flex;
-    justfy-content: center;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: grey;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .imgBx {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #f00;
+    border-radius: 15px;
+    background: url("dog.jpg");
+    background-size: cover;
+}
+
+.card .imgBx::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50px;
+    box-shadow: -10px 10px 0 grey;
+}
+
+.card .imgBx::after {
+    content: "";
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50px;
+    box-shadow: -10px 10px 0 grey;
+}
+
+.card .content {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: #232949;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    padding: 0 35px;
+}
+
+
+.card .content .price {
+    position: absolute;
+    top: -75px;
+    width: 50%;
+    height: 75px;
+    left: 0;
+    background: #232949;
+    border-top: 10px solid grey;
+    border-right: 10px solid grey;
+    border-top-right-radius: 25px;
+}
+
+.card .content .price::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-radius: 50px;
+    box-shadow: -10px -10px 0 grey;
+}
+
+.card .content .price::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -25px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -10px 10px 0 #232949;
+}
+
+.card .content .price a {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    margin: 15px;
+    background: #fff;
+    color: #333;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card .content ul {
+    color: #fff;
+}
+
+.card .content ul > li {
+    padding: 3px;
 }
