@@ -13,6 +13,23 @@
         <a href="#">Portfolio</a>
         <a href="#">Team</a>
         <a href="#">Contact</a>
+        <div id="mark"></div>
     </nav>
+    <script>
+        let marker = document.querySelector("#mark");
+        let links = document.querySelectorAll("nav a");
+
+        function indicator(e) {
+            marker.style.left = e.offsetLeft+"px";
+            marker.style.width = e.offsetWidth+"px";
+        }
+
+        links.forEach(link => {
+            link.addEventListener("click", (e) => {
+                indicator(e.target);
+            })
+        })
+
+    </script>
 </body>
 </html>
