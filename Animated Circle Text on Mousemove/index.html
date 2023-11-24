@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Animated Circle Text on Mousemove</title>
+</head>
+<body>
+    <h2 class="text">Circle - Text - Effects</h2>
+    <script>
+        let text = document.querySelector(".text");
+
+        // Aca separo las palabras en letras
+        text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");
+
+        let content = document.querySelectorAll("span");
+        for (let i = 0; i < content.length; i++) {
+            content[i].style.transform = "rotate("+i*18+"deg)";
+            
+        }
+
+        document.addEventListener("mousemove",(e) => {
+            text.style.left = e.pageX + "px";
+            text.style.top = e.pageY + "px";
+            text.style.transform = `rotate(${e.pageX / 2}deg) rotate(${e.pageY / -2}deg)`;
+        })
+    </script>
+</body>
+</html>
